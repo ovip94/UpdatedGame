@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{2CC274CF-1C3F-9C23-BD4B-818180139FA1}") = "Crocodilii", "Assembly-CSharp.csproj", "{D8DD3634-F75F-8635-9227-246BC213770D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D8DD3634-F75F-8635-9227-246BC213770D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8DD3634-F75F-8635-9227-246BC213770D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8DD3634-F75F-8635-9227-246BC213770D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8DD3634-F75F-8635-9227-246BC213770D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
