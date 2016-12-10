@@ -1,0 +1,8 @@
+Din cauza ca nu am putut uploada tot proiectul scenele nu sunt incarcate dupa ce clonati repoul. Va trebui sa deschideti proiectul, 
+FILE->BUILD SETTINGS si sa apasati Add Open Scenes in ordinea urmatoare:
+UsernameInput   
+Start
+Main
+Highscores
+
+Conteaza oridnea pt ca ele primesc un index prin care se face trecerea de la o scena la cealalta.
