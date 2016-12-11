@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+using UnityEngine.UI;
+
+
 public class ScaleText : MonoBehaviour {
     public float difficult;
 
@@ -15,6 +18,15 @@ public class ScaleText : MonoBehaviour {
     float xScale;
     float yScale;
 
+    //------------
+    TextMesh tm;
+    string text_buffer;
+    float moveSpeed = 10;
+    float timing;
+    Vector3 target;
+
+    //-------------
+
 
     // Use this for initialization
     void Start () {
@@ -23,20 +35,29 @@ public class ScaleText : MonoBehaviour {
         maxScale *= transform.localScale.y;
         xScale = 0.01f * transform.localScale.x;
         yScale = 0.011f * transform.localScale.y;
-        number = Random.Range(1,254);
+        number = Random.Range(1, 4);
+
+        //-----------------------------------
+        tm = gameObject.GetComponent<TextMesh>();
+        timing = 0;
+        //----------------------------------------
+
 
     }
 
 	
+
 	// Update is called once per frame
 	void Update () {
-     
-        if ( number % 3 == 0)
+        
+        if (number  == 0)
             firstTrans();
-        else if ( number % 3 == 1)
+        else if ( number == 1)
             secondTrans();
-        else
-        thirdTrans();
+        else if (number == 2)
+            thirdTrans();
+        else myEffect();
+
     }
 
 
@@ -78,6 +99,28 @@ public class ScaleText : MonoBehaviour {
 
         }
     }
+   
+   //flash effect BALOSAHCE
+    void myEffect()
+    {
+       
+        tm.color = new Color(tm.color.r, tm.color.g, tm.color.b, Mathf.PingPong(Time.time * 10,1));
+        firstTrans();
+        timing += Time.deltaTime;
+        transform.position += transform.forward * moveSpeed * Time.deltaTime;
+     if (timing > 4)
+        {
+            ChangeDirection();
+            timing = 0;
+        }
+    }
+
+    void ChangeDirection()
+    {
+        transform.position = new Vector3(Random.Range(-10, 10), Random.Range(-15, 15), 0);
+    }
+
+
 
     // mers rapid catre stanga
     void secondTrans()
