@@ -25,6 +25,10 @@ public class ScaleText : MonoBehaviour {
     float timing;
     Vector3 target;
 
+    float RotationSpeed = 100f;
+    float OrbitSpeed = 50f;
+    float DesiredMoonDistance;
+   
     //-------------
 
 
@@ -35,11 +39,13 @@ public class ScaleText : MonoBehaviour {
         maxScale *= transform.localScale.y;
         xScale = 0.01f * transform.localScale.x;
         yScale = 0.011f * transform.localScale.y;
-        number = Random.Range(1, 4);
+        number = Random.Range(1, 7);
 
         //-----------------------------------
         tm = gameObject.GetComponent<TextMesh>();
         timing = 0;
+
+        DesiredMoonDistance = Vector3.Distance(new Vector3(0,0,10), transform.position);
         //----------------------------------------
 
 
@@ -49,14 +55,17 @@ public class ScaleText : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        
+
         if (number  == 0)
-            firstTrans();
-        else if ( number == 1)
-            secondTrans();
-        else if (number == 2)
-            thirdTrans();
-        else myEffect();
+             firstTrans();
+         else if ( number == 1)
+             secondTrans();
+         else if (number == 2)
+             thirdTrans();
+         else  if (number == 3) 
+             myEffect();
+        else
+            myEffect2();
 
     }
 
@@ -118,6 +127,21 @@ public class ScaleText : MonoBehaviour {
     void ChangeDirection()
     {
         transform.position = new Vector3(Random.Range(-10, 10), Random.Range(-10, 10), 0);
+        
+    }
+
+   
+    void myEffect2 ()
+    {
+        tm.color = new Color(tm.color.r, tm.color.g, tm.color.b, Mathf.PingPong(Time.time * 10, 1));
+
+        transform.Rotate(Vector3.up, RotationSpeed * Time.deltaTime);
+        transform.RotateAround(new Vector3(0, 0, 20), Vector3.up, OrbitSpeed * Time.deltaTime);
+
+        //fix possible changes in distance
+        float currentMoonDistance = Vector3.Distance(new Vector3(0, 0, 20), transform.position);
+        Vector3 towardsTarget = transform.position - new Vector3(0, 0, 20);
+        transform.position += (DesiredMoonDistance - currentMoonDistance) * towardsTarget.normalized;
     }
 
 
