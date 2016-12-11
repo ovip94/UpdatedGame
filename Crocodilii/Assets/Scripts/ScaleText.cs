@@ -117,7 +117,7 @@ public class ScaleText : MonoBehaviour {
 
     void ChangeDirection()
     {
-        transform.position = new Vector3(Random.Range(-10, 10), Random.Range(-15, 15), 0);
+        transform.position = new Vector3(Random.Range(-10, 10), Random.Range(-10, 10), 0);
     }
 
 
