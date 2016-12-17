@@ -28,12 +28,20 @@ public class ScaleText : MonoBehaviour {
     float RotationSpeed = 100f;
     float OrbitSpeed = 50f;
     float DesiredMoonDistance;
-   
-    //-------------
-
+   	//-------------
+	bool Shaking;
+	float ShakeDecay;
+	float ShakeIntensity;
+	Vector3 OriginalPos;
+	Quaternion OriginalRot;
 
     // Use this for initialization
     void Start () {
+		Shaking = true; 
+		ShakeDecay = 0.02f;
+		ShakeIntensity = 0.3f;    
+		OriginalPos = transform.position;
+		OriginalRot = transform.rotation;
         difficult = 3f;
         minScale *= transform.localScale.x;
         maxScale *= transform.localScale.y;
@@ -55,17 +63,18 @@ public class ScaleText : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-
-        if (number  == 0)
-             firstTrans();
-         else if ( number == 1)
-             secondTrans();
-         else if (number == 2)
-             thirdTrans();
-         else  if (number == 3) 
-             myEffect();
-        else
-            myEffect2();
+		Shake ();
+//		if (number == 0)
+//			Shake ();
+////             firstTrans();
+//         else if ( number == 1)
+//             secondTrans();
+//         else if (number == 2)
+//             thirdTrans();
+//         else  if (number == 3) 
+//             myEffect();
+//        else
+//            myEffect2();
 
     }
 
@@ -162,4 +171,20 @@ public class ScaleText : MonoBehaviour {
     {
         transform.Rotate(Vector3.up * Time.deltaTime * 700, Space.World);
     }
+		
+
+	void Shake () 
+	{
+		difficult += 0.1f;
+
+		transform.position = OriginalPos + Random.insideUnitSphere * ShakeIntensity;
+		transform.rotation = new Quaternion(OriginalRot.x + Random.Range(-ShakeIntensity, ShakeIntensity)*.2f,
+				OriginalRot.y + Random.Range(-ShakeIntensity, ShakeIntensity)*.2f,
+				OriginalRot.z + Random.Range(-ShakeIntensity, ShakeIntensity)*.2f,
+				OriginalRot.w + Random.Range(-ShakeIntensity, ShakeIntensity)*.2f);
+
+		if(difficult < 50.0f)
+			ShakeIntensity += difficult * 0.0001f;
+	}
+		   
 }

@@ -1,0 +1,13 @@
+/Users/cristian/Practice/mps/UpdatedGame/Crocodilii/Temp/bin/Debug/UnityEngine.dll
+/Users/cristian/Practice/mps/UpdatedGame/Crocodilii/Temp/bin/Debug/UnityEditor.dll
+/Users/cristian/Practice/mps/UpdatedGame/Crocodilii/Temp/bin/Debug/UnityEngine.Networking.dll
+/Users/cristian/Practice/mps/UpdatedGame/Crocodilii/Temp/bin/Debug/UnityEngine.UI.dll
+/Users/cristian/Practice/mps/UpdatedGame/Crocodilii/Temp/bin/Debug/Mono.Cecil.dll
+/Users/cristian/Practice/mps/UpdatedGame/Crocodilii/Temp/bin/Debug/Unity.SerializationLogic.dll
+/Users/cristian/Practice/mps/UpdatedGame/Crocodilii/Temp/bin/Debug/Unity.DataContract.dll
+/Users/cristian/Practice/mps/UpdatedGame/Crocodilii/Temp/bin/Debug/ICSharpCode.NRefactory.dll
+/Users/cristian/Practice/mps/UpdatedGame/Crocodilii/Temp/bin/Debug/Unity.UNetWeaver.dll
+/Users/cristian/Practice/mps/UpdatedGame/Crocodilii/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
+/Users/cristian/Practice/mps/UpdatedGame/Crocodilii/Temp/bin/Debug/Unity.CecilTools.dll
+/Users/cristian/Practice/mps/UpdatedGame/Crocodilii/Temp/bin/Debug/Mono.Cecil.Pdb.dll
+/Users/cristian/Practice/mps/UpdatedGame/Crocodilii/Temp/bin/Debug/Mono.Cecil.Mdb.dll
